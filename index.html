@@ -1,23 +1,331 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>WhatsApp Preview Test</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta property="og:title" content="Congratulations Pravesh!" />
-  <meta property="og:description" content="We thank you for your support #MilkarJitayenge" />
-  <meta property="og:image" content="https://whatsappchatiamge.onrender.com/share-image.jpg" />
-  <meta property="og:url" content="https://whatsappchatiamge.onrender.com/" />
-  <meta property="og:type" content="website" />
+<title>Congratulations shuvh!</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Congratulations shuvh!" />
+<meta property="og:description" content="We thank you for your support #MilkarJitayenge" />
+<meta property="og:image" content="https://whatsappchatiamge.onrender.com/share-image.jpg" />
+<meta property="og:url" content="https://whatsappchatiamge.onrender.com/" />
+<meta property="og:type" content="website" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Congratulations Pravesh!" />
+<meta name="twitter:title" content="Congratulations shuvh!" />
 <meta name="twitter:description" content="We thank you for your support #MilkarJitayenge" />
 <meta name="twitter:image" content="https://whatsappchatiamge.onrender.com/share-image.jpg" />
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    padding:40px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    gap:50px;
+    align-items:flex-start;
+}
+
+.left{
+    flex:1;
+}
+
+.right{
+    width:450px;
+}
+
+h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.desc{
+    font-size:28px;
+    margin-bottom:30px;
+}
+
+.share-box{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.share-btn{
+    border:none;
+    color:#fff;
+    padding:12px 18px;
+    cursor:pointer;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.whatsapp{background:#25D366;}
+.facebook{background:#1877F2;}
+.twitter{background:#000;}
+.linkedin{background:#0A66C2;}
+.native{background:#FF006E;}
+
+.copy-box{
+    display:flex;
+    gap:10px;
+}
+
+.copy-box input{
+    flex:1;
+    padding:10px;
+}
+
+.copy-box button{
+    padding:10px 20px;
+}
+
+.card{
+    background:#f8d3d3;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.profile{
+    display:flex;
+    gap:15px;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.profile img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+}
+
+.user-name{
+    font-size:32px;
+    font-weight:bold;
+}
+
+.city{
+    color:#555;
+}
+
+.message{
+    margin-bottom:20px;
+    line-height:1.6;
+}
+
+.players{
+    width:100%;
+}
+
+.download{
+    margin-top:20px;
+    display:inline-block;
+}
+</style>
 </head>
+
 <body>
-  <h1>WhatsApp Preview Test</h1>
-  <p>Replace YOUR-APP with your Railway domain.</p>
+
+<div class="container">
+
+    <div class="left">
+
+        <h1>Congratulations shuvh!</h1>
+
+        <p class="desc">
+            We thank you for your support #MilkarJitayenge
+        </p>
+
+        <div class="share-box">
+
+            <button class="share-btn whatsapp" onclick="shareWhatsApp()">
+                WhatsApp
+            </button>
+
+            <button class="share-btn facebook" onclick="shareFacebook()">
+                Facebook
+            </button>
+
+            <button class="share-btn twitter" onclick="shareTwitter()">
+                X
+            </button>
+
+            <button class="share-btn linkedin" onclick="shareLinkedIn()">
+                LinkedIn
+            </button>
+
+            <button class="share-btn native" onclick="shareNative()">
+                Instagram / Mobile Share
+            </button>
+
+        </div>
+
+        <div class="copy-box">
+            <input
+                id="shareLink"
+                readonly
+            />
+            <button onclick="copyLink()">
+                Copy Link
+            </button>
+        </div>
+
+    </div>
+
+    <div class="right">
+
+        <div class="card" id="wishCard">
+
+            <div class="card-body">
+
+                <div class="profile">
+
+                    <img src="https://via.placeholder.com/80" />
+
+                    <div>
+                        <div class="user-name">
+                            shuvh
+                        </div>
+
+                        <div class="city">
+                            Mumbai
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="message">
+                    Team India, your hard work and dedication inspire us all.
+                    Best of luck!
+                    #MilkarJitayenge 🎉🎉🎉
+                </div>
+
+                <img
+                    class="players"
+                    src="share-image.jpg"
+                />
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <a
+            class="download"
+            href="share-image.jpg"
+            download
+        >
+            Download My Wish
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+const shareUrl = window.location.href;
+
+const shareText =
+"Congratulations shuvh! We thank you for your support #MilkarJitayenge";
+
+document.getElementById("shareLink").value = shareUrl;
+
+function copyLink(){
+
+    navigator.clipboard.writeText(shareUrl);
+
+    alert("Link copied");
+}
+
+function shareWhatsApp(){
+
+    window.open(
+        `https://wa.me/?text=${encodeURIComponent(
+            shareText + " " + shareUrl
+        )}`,
+        "_blank"
+    );
+}
+
+function shareFacebook(){
+
+    window.open(
+        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+            shareUrl
+        )}`,
+        "_blank"
+    );
+}
+
+function shareTwitter(){
+
+    window.open(
+        `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+            shareText
+        )}&url=${encodeURIComponent(
+            shareUrl
+        )}`,
+        "_blank"
+    );
+}
+
+function shareLinkedIn(){
+
+    window.open(
+        `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+            shareUrl
+        )}`,
+        "_blank"
+    );
+}
+
+async function shareNative(){
+
+    if(!navigator.share){
+
+        alert(
+            "Native share is available only on supported mobile browsers."
+        );
+
+        return;
+    }
+
+    try{
+
+        await navigator.share({
+            title: "My Wish",
+            text: shareText,
+            url: shareUrl
+        });
+
+    }catch(err){
+
+        console.log(err);
+    }
+}
+</script>
+
 </body>
 </html>
